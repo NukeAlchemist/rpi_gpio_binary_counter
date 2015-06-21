@@ -35,34 +35,26 @@ def printArray(array1):
 # e.g. input of [[23,1] , [24,1] , [25,0]] returns [[23,0] , [24,0] , [25,1]]:
 def incArray(array1):
 
-	pinArrayTemp1 = []
-
-	# Converts the 3D array of pins and their binary component to a 2D array of binary:
-	for i in range(0, len(array1)):
-	
-		pinArrayTemp1.append(array1[i][1])
-
 	temp = 1	# Necessary to increment the array on first loop iteration.
 
 	# Increments 2D binary array
-	for i in range(0, len(pinArrayTemp1)):
+	for i in range(0, len(array1)):
 
 		if temp == 1:
 
-			if pinArrayTemp1[i] == 1:
+			if array1[i][1] == 1:
 
-				pinArrayTemp1[i] = 0
+				array1[i][1] = 0
 				temp = 1
 
 			else:
 
-				pinArrayTemp1[i] = 1
+				array1[i][1] = 1
 				temp = 0
 
-	# Writes binary 2D array back to 3D array:
-	for i in range(0, len(array1)):
+		else:
 
-		array1[i][1] = pinArrayTemp1[i]
+			return
 
 # Run it baby!
 try:
